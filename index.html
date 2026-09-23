@@ -1,29 +1,32 @@
 ---
 layout: default
-title: Home
-description: Practical notes on software engineering and systems.
+title: Início
+description: Textos de Gabriel Camargo sobre engenharia de software e Direito.
 ---
 
 <section class="intro">
-  <p class="eyebrow">PERSONAL NOTES / SOFTWARE & SYSTEMS</p>
-  <h1>Thinking in systems.<br>Writing things down.</h1>
+  <p class="eyebrow">ANOTAÇÕES / SOFTWARE E DIREITO</p>
+  <h1>Software e Direito.<br>Ideias colocadas no papel.</h1>
 
   <p class="lead">
-    I'm Gabriel, a software engineer working with backend systems.
-    This is where I keep practical notes on building, debugging,
-    and understanding software.
+    Sou o Gabriel, advogado e engenheiro de software. Aqui reúno análises
+    jurídicas, notas sobre desenvolvimento de sistemas e aprendizados
+    da prática em cada área.
   </p>
 </section>
 
 <section class="writing" aria-labelledby="writing-title">
   <div class="section-heading">
-    <h2 id="writing-title">Writing</h2>
-    <span>{{ site.posts.size }} notes</span>
+    <h2 id="writing-title">Textos</h2>
+    <span>
+      {{ site.posts.size }}
+      {% if site.posts.size == 1 %}texto{% else %}textos{% endif %}
+    </span>
   </div>
 
   {% for post in site.posts %}
     <article class="post-preview">
-      <div class="post-date">{{ post.date | date: "%d %b %Y" }}</div>
+      <div class="post-date">{{ post.date | date: "%d/%m/%Y" }}</div>
       <div>
         <h3>
           <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
@@ -36,7 +39,7 @@ description: Practical notes on software engineering and systems.
     </article>
   {% else %}
     <p class="empty-state">
-      The first note is being written. Check back soon.
+      O primeiro texto está sendo escrito. Volte em breve.
     </p>
   {% endfor %}
 </section>
