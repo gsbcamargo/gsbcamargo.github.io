@@ -1,0 +1,13 @@
+# Generated Jekyll site and caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Local Bundler files
+.bundle/
+vendor/bundle/
+
+# Operating system files
+.DS_Store
+Thumbs.db

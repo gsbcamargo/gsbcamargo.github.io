@@ -1,7 +1,8 @@
 title: Gabriel Schreiner
 description: Textos de Gabriel sobre engenharia de software e Direito.
-url: "https://gabrielschreiner.com.br"
+url: "https://gsbcamargo.github.io"
 baseurl: ""
+theme: null
 timezone: America/Sao_Paulo
 markdown: kramdown
 permalink: /writing/:year/:month/:day/:title/

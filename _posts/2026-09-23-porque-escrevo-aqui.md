@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Por que estou escrevendo aqui"
-description: "Uma breve apresentação deste site e dos assuntos que quero explorar."
+description: "Uma breve apresentação deste SÍTIO e dos assuntos que quero explorar."
 ---
 
 Criei este site para registrar ideias que possam ser úteis além de um único projeto.
 
-## O que você vai encontrar aqui
+## O que você vai encontrar neste blog
 
 - Anotações sobre desenvolvimento e manutenção de software.
 - Aprendizados ao investigar problemas em sistemas reais.
