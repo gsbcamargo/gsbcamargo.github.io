@@ -15,4 +15,4 @@ Criei este site para registrar ideias que possam ser úteis além de um único p
 
 ## Por onde começar
 
-Este é um teste de publicação. Em breve o primeiro post real estará disponível para apreciação e crítica.
+Este é um teste de publicação. Em breve o primeiro post real estará disponível para apreciação e crítica. Automatizações de IA me irritam e já me levaram a corrigir esse trem aqui umas (literais) dezenove vezes. Oof.
