@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Sobre
-permalink: /about/
+permalink: /sobre/
 description: Sobre Gabriel Camargo, advogado e engenheiro de software.
 ---
 
