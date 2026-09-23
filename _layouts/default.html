@@ -32,6 +32,7 @@
       <nav aria-label="Main navigation">
         <a href="{{ '/' | relative_url }}">Principal</a>
         <a href="{{ '/sobre/' | relative_url }}">Sobre</a>
+        <a href="{{ '/contato/' | relative_url }}">Contato</a>
         <a href="https://github.com/gsbcamargo">GitHub ↗</a>
         <button id="theme-toggle" type="button"
                 aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
@@ -45,7 +46,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>© {{ 'now' | date: '%Y' }} Gabriel Schreiner
+      <span>© {{ 'now' | date: '%Y' }} Gabriel Schreiner <a href="mailto:me@gabrielschreiner.com.br">me@gabrielschreiner.com.br</a>
         <p>OAB/PR n.° 79.359 | OAB/SC n.º 79.057-A</p>
       </span>
       <span>Written to be read.</span>
