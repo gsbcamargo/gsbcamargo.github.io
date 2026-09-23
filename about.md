@@ -2,7 +2,7 @@
 layout: default
 title: Sobre
 permalink: /sobre/
-description: Sobre Gabriel Camargo, advogado e engenheiro de software.
+description: Sobre Gabriel Schreiner, advogado e engenheiro de software.
 ---
 
 # Olá, sou o Gabriel,
