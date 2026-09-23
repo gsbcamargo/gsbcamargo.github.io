@@ -1,11 +1,14 @@
 ---
 layout: default
 title: Início
-description: Textos de Gabriel Camargo sobre engenharia de software e Direito.
+description: Textos de Gabriel Schreiner sobre engenharia de software e Direito.
 ---
 
 <section class="intro">
-  <p class="eyebrow">ANOTAÇÕES / SOFTWARE E DIREITO</p>
+  <div class="intro-kicker">
+    <span class="intro-logo" role="img" aria-label="Figura da Justiça"></span>
+    <p class="eyebrow">ANOTAÇÕES / SOFTWARE E DIREITO</p>
+  </div>
   <h1>Software e Direito.<br>Ideias colocadas no papel.</h1>
 
   <p class="lead">
@@ -25,21 +28,21 @@ description: Textos de Gabriel Camargo sobre engenharia de software e Direito.
   </div>
 
   {% for post in site.posts %}
-    <article class="post-preview">
-      <div class="post-date">{{ post.date | date: "%d/%m/%Y" }}</div>
-      <div>
-        <h3>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h3>
-        {% if post.description %}
-          <p>{{ post.description }}</p>
-        {% endif %}
-      </div>
-      <span class="post-arrow" aria-hidden="true">↗</span>
-    </article>
+  <article class="post-preview">
+    <div class="post-date">{{ post.date | date: "%d/%m/%Y" }}</div>
+    <div>
+      <h3>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+      {% if post.description %}
+      <p>{{ post.description }}</p>
+      {% endif %}
+    </div>
+    <span class="post-arrow" aria-hidden="true">↗</span>
+  </article>
   {% else %}
-    <p class="empty-state">
-      O primeiro texto está sendo escrito. Volte em breve.
-    </p>
+  <p class="empty-state">
+    O primeiro texto está sendo escrito. Volte em breve.
+  </p>
   {% endfor %}
 </section>

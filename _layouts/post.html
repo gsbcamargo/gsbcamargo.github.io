@@ -6,7 +6,9 @@ layout: default
   <a class="back-link" href="{{ '/' | relative_url }}">← Todos os textos</a>
 
   <header class="article-header">
-    <p class="eyebrow">{{ page.date | date: "%d %b %Y" }}</p>
+    {% assign meses = "janeiro,fevereiro,março,abril,maio,junho,julho,agosto,setembro,outubro,novembro,dezembro" | split: "," %}
+    {% assign indice_mes = page.date | date: "%m" | minus: 1 %}
+    <p class="eyebrow">{{ page.date | date: "%d" }} de {{ meses[indice_mes] }} de {{ page.date | date: "%Y" }}</p>
     <h1>{{ page.title }}</h1>
     {% if page.description %}
       <p class="article-description">{{ page.description }}</p>
