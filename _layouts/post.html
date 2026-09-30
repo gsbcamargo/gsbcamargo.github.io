@@ -6,17 +6,19 @@ layout: default
   <a class="back-link" href="{{ '/' | relative_url }}">← Todos os textos</a>
 
   <header class="article-header">
-    {% assign meses = "janeiro,fevereiro,março,abril,maio,junho,julho,agosto,setembro,outubro,novembro,dezembro" | split: "," %}
+    {% assign meses = "janeiro,fevereiro,março,abril,maio,junho,julho,agosto,setembro,outubro,novembro,dezembro" |
+    split: "," %}
     {% assign indice_mes = page.date | date: "%m" | minus: 1 %}
     <p class="eyebrow">{{ page.date | date: "%d" }} de {{ meses[indice_mes] }} de {{ page.date | date: "%Y" }}</p>
 
-    <p class="post-views" id="post-views" hidden>
-      <span id="post-views-number"></span> visitas
+    <p class="post-views">
+      <span id="post-views-number">—</span>
+      <span id="post-views-label">visitas</span>
     </p>
 
     <h1>{{ page.title }}</h1>
     {% if page.description %}
-      <p class="article-description">{{ page.description }}</p>
+    <p class="article-description">{{ page.description }}</p>
     {% endif %}
   </header>
 
@@ -27,7 +29,12 @@ layout: default
 
 <script>
   document.addEventListener("DOMContentLoaded", async () => {
-    if (!window.goatcounter?.get_data) return;
+    const number = document.getElementById("post-views-number");
+
+    if (!window.goatcounter?.get_data) {
+      console.warn("GoatCounter não carregou.");
+      return;
+    }
 
     const path = window.goatcounter.get_data().p;
     const url = "https://gsbcamargo.goatcounter.com/counter/" +
@@ -35,13 +42,20 @@ layout: default
 
     try {
       const response = await fetch(url);
-      if (!response.ok) return;
+
+      if (response.status === 404) {
+        number.textContent = "0";
+        return;
+      }
+
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
       const { count } = await response.json();
-      document.getElementById("post-views-number").textContent = count;
-      document.getElementById("post-views").hidden = false;
+      number.textContent = count;
+      document.getElementById("post-views-label").textContent =
+        count === "1" ? "visita" : "visitas";
     } catch (error) {
-      // hides count if failure
+      console.warn("Não foi possível consultar as visitas:", error);
     }
   });
 </script>
