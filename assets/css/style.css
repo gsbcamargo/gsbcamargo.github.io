@@ -314,6 +314,11 @@ h1 {
 	}
 }
 
+.post-views {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
 /* @media (prefers-color-scheme: dark) {
 	:root:not([data-theme="light"]) .intro-logo {
 		filter: invert(1);

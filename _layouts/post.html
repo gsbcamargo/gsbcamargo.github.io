@@ -9,6 +9,11 @@ layout: default
     {% assign meses = "janeiro,fevereiro,março,abril,maio,junho,julho,agosto,setembro,outubro,novembro,dezembro" | split: "," %}
     {% assign indice_mes = page.date | date: "%m" | minus: 1 %}
     <p class="eyebrow">{{ page.date | date: "%d" }} de {{ meses[indice_mes] }} de {{ page.date | date: "%Y" }}</p>
+
+    <p class="post-views" id="post-views" hidden>
+      <span id="post-views-number"></span> visitas
+    </p>
+
     <h1>{{ page.title }}</h1>
     {% if page.description %}
       <p class="article-description">{{ page.description }}</p>
@@ -19,3 +24,24 @@ layout: default
     {{ content }}
   </div>
 </article>
+
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    if (!window.goatcounter?.get_data) return;
+
+    const path = window.goatcounter.get_data().p;
+    const url = "https://gsbcamargo.goatcounter.com/counter/" +
+      encodeURIComponent(path) + ".json";
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) return;
+
+      const { count } = await response.json();
+      document.getElementById("post-views-number").textContent = count;
+      document.getElementById("post-views").hidden = false;
+    } catch (error) {
+      // hides count if failure
+    }
+  });
+</script>
